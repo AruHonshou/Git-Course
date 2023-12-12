@@ -1,0 +1,158 @@
+AREA LOCAL
+
+git --version: Muestra la version del git que tengo.
+
+git help: Git te da ayuda sobre muchos comandos.
+
+git help commit: Te muestra todo sobre el commmit.
+
+q: la tecla q es para salir. q = quit
+
+git config --global user.name "Nombre": es para poner el username globalmente. Establecer usuario
+
+git config --global user.email "email": es para poner el email que usaras 
+
+git config --global -e: muestra que tienes, en este caso nos muestra el username y user.email
+para salir de ello escribes esc + : + w + q + ! + enter
+
+git init: inicia el repositorio en el canal/ carpeta donde lo estas haciendo.
+
+git status: muestra cuales archivos no estan con seguimiento
+
+git add .: agrega al status todos para que puedan ser comitted
+
+git reset (inserte nombre que quieres de regreso): trae lo que quieres de regreso.
+
+git commit -m "Primer commit": Nos da un mensaje donde todos los archivos fueron comitted
+
+git log: da quien es el autor, el dia que se realizo el primer commit y el nombre del primer commit. Si hiciste 3 commit, se veran los 3. Cada commit tiene un hash unico. El HEAD es donde se encuentra el repositorio.
+
+git checkout -- . : Reeconstruye todo como el ultimo commit realizado.
+
+git branch : Para ver las ramas que tenemos en el repositorio y con el * muestra donde estamos trabajando
+
+git branch -m master main : hace que la rama master sea main, la reenombra
+
+git config --global init.defaultBranch Main : hacemos que por default inicie como rama llamada MAIN
+
+git config --global -e : entramos a la configuracion donde vemos todo hasta lo default que sera siempre rama main, para salirse es : + q + ! + enter
+
+git commit -am "insertar texto" : esto hace un commit, pero para actualizar.
+
+git add *.html : Selecciona toda la carpeta ROOT que tengan HTML.
+
+git add carpeta/*.js : En este caso agregamos todo lo que tenga JS en la carpeta llamamada JS.
+
+git add carpeta/archivo : En este caso agregamos la carpeta y el archivo que quieres agregar en especifico.
+
+git add CSS/ : Agregamos todos los archivos de la carpeta CSS
+
+git status --short: solo vemos los cambios que hicimos en el repositorio.
+
+git log --oneline: vemos en resumen el LOG
+
+git log --oneline --decorate --al --graph: otro resumen de log, donde vemos los graficos de las ramas.
+
+git diff: para ver los cambios que se hicieron y como estaba antes de las modificaciones.
+
+git commit --amend -m "nuevo nombre": este comando es para cambiar el nombre al ultimo commit que realizaste.
+
+git reset --soft HEAD^: se cambia o actualizas el commit, el ultimo que hiciste, sin tener que crear otro. El head puede ser reemplazado por el # de un commit. El ^ es para decir cuantos commit quieres ir, luego vuelves a realizar el git add y despues el commit.
+
+git reset --mixed 0089a2b: Agregamos el # al que queremos irnos.
+
+git reset --hard 0089a2b: Lo que hacemos es que regresamos al commit que queremos, por ende nos dira que HEAD esta en ese commit. LOS ELIMINA. PERO, tambien podemos regresar al punto mas adelante utilizando el # y asi no perderemos nada y recuperaremos todo.
+
+git reflog: Nos da una lista en orden cronologico de todo lo que hemos realizado.
+
+git mv planes.md salvar-mundo.md: lo que hace es cambiarle el nombre al archivo y de paso agregarle el nuevo nombre.
+
+git rm salvar-mundo.md : lo remueve pero TODAVIA NO ESTA ELIMINADO, 
+
+gir branch: Con este comando creamos una rama, despues del branch se puede llamar como sea la rama que se esta creando.
+
+git checkout: con este comando podemos movernos a la rama que creamos, pones el comando y despues el nombre de la rama.
+
+git merge : con este comando agregamos la rama que creamos y decidimos unir a la rama main/master. 
+
+git branch -d: este comando es para borrar la rama que ya no tiene uso, solo es poner el comando y el nombre de la rama. Y al final ponemos -f si queremos forzarlo.
+
+git checkout -b: Este comando es para crear un branch (-b) y movernos inmediatamente a esa rama, se utiliza el comando y luego se escribe el nombre que le pondremos a la rama.
+
+git tag: Este comando crea un tag, se usa comando y pones el nombre del tag.
+
+git tag -d: Borra el tag.
+
+git tag -a v1.0.0 -m "Version 1.0.0 lista": Lo coloca al ultimo commit donde estas y crea el release tag. 
+
+git tag -a v0.1.0 2bd75a1 -m "Version Alpha de nuestra app": creamos un git al commit que queramos.
+
+git show v0.1.0: este comando es para ver con mas explicacion y detalle el tag que tiene ese commit.
+
+git stash: Guarda todo el directorio en el que estas trabajando y lo indexo.
+
+git stash pop: Va a tomar el ultimo stash, coloca los ultimos cambios y mantiene los cambios que hicimos anteriormente.
+
+git stash clear: borra todos los stash existentes, pero se pueden recuperar claro.
+
+git stash save: guarda el stash.
+
+git stash list --stat: es una lista del stash con mas explicacion.
+
+git rebase master: El comando es para actualizar las referencias y el puntero del ultimo commit de la rama.
+
+git rebase =i HEAD~4: La i es para que sea interactivo y el HEAD~4, es que lo haremos 4 commits antes del HEAD.
+Aparecera una lista pero usaremos squash para unirlas.
+Despues te envia otra pantalla de informacion.
+Si queremos editar el nombre del commit, utilizamos la r, de reword.NO LE CAMBIAMOS EL NOMBRE EN ESE MOMENTO.
+Para editar, usamos la e.
+----------------------------------------------------------------------------------------------------------------------------------------
+GitHub
+
+git push: Esto toma los cambios locales, los sube a github y los unifica. PUEDE TENER CONFLICOS.
+
+git push --tags: con este comando hacemos push de los tags a nuestro repositorio de github.
+
+git pull: trae todo lo nuevo que tiene el repositorio en github y actualiza los datos.
+
+git pull origin: Es otra manera de hacer pull, pero aqui despues de origin podemos poner de cual rama queremos tenerlo.
+
+git config --global pull..ff only
+
+git config pull.rebase true
+
+git fetch: actualiza el repositorio local de acuerdo con el repositorio de github
+, claro debebos hacer luego git pull.
+
+git remote add upstream(link del repositorio): es para actualizar el folk.
+
+git pull upstream master: Te trae la informacion de el repositorio original y la rama, en este caso la master, para actualizar la informacion de nuestro folk.
+
+git fetch, git branch -a, git checkout rama-1: con el segundo comando vemos las ramas que tenemos en el repositorio y con checkout nos iremos a esa rama.
+
+git checkout ,aster, git merge rama-1, git push: Cualquier equipo de trabajo puede hacer eso, nos pasamos a la rama master, luego pasamos esa rama que elegimos con el merge a la master y luego con el push lo enviamos al repositorio main.
+
+git push origin rama-1: Subira a github toda la rama. Con el pull request podremos ver los cambios.
+
+git pull --all: Traera todo de github, TODO.
+git branch --all: Traera todas las ramas creadas desde github.
+
+git push origin :rama-misiones: esto hace que borremos la rama que esta en github como al mismo tiempo la local(PC)
+
+git remote prune origin: Elimina las ramas que estan en el comando git branch -a.
+
+git commit -am "Fixes #4: Borrado el soldado del invierno.": Con este commit estamos respondiendo al Issue numero 4, con una respuesta.
+
+
+
+----------------------------------------------------------------------------------------------------------------
+CREAR ALIAS
+
+git config --global alias.s "status --short": estamos agregando un alias al comando de status --short, con solo tocar git s.
+
+git config --global -e: vemos la configuracion global y podemos editar como queremos el alias.
+
+git config --global alias.lg "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+esto es un git log demasiado elegante, lo estamos llamando como alias, git lg
+
+
